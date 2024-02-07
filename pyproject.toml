@@ -16,7 +16,7 @@ classifiers = [
 keywords = ["email", "templates"]
 requires-python = ">=3.6"
 dependencies = [
-    "requests>=2.31.0",
+    "requests>=2.27.1",
 ]
 
 [project.urls]

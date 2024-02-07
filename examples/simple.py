@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 from dotenv import load_dotenv
 from templateless import Content, Email, EmailAddress, Templateless
 

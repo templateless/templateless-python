@@ -10,23 +10,6 @@ class Theme(Enum):
     SIMPLE = "SIMPLE"
 
 
-class Button(Component):
-    def __init__(self, text: str, url: str):
-        self.text = text
-        self.url = url
-
-
-class Image(Component):
-    def __init__(
-        self, src: str, alt: str = "", width: int = 0, height: int = 0, url: str = ""
-    ):
-        self.src = src
-        self.alt = alt
-        self.width = width
-        self.height = height
-        self.url = url
-
-
 class Content:
     def __init__(self):
         self.version = 0

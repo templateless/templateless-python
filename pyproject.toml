@@ -15,6 +15,9 @@ classifiers = [
 ]
 keywords = ["email", "templates"]
 requires-python = ">=3.6"
+dependencies = [
+    "requests>=2.31.0",
+]
 
 [project.urls]
 Homepage = "https://templateless.com/"

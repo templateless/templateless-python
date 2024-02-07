@@ -1,0 +1,30 @@
+[project]
+name = "templateless"
+description = "Ship faster by sending elegant emails using just code"
+version = "0.1.0-alpha.0"
+readme = "README.md"
+authors = []
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+keywords = ["email", "templates"]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://templateless.com/"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["templateless"]
+
+[tool.setuptools.package-data]
+templateless = ["py.typed"]

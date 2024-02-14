@@ -1,12 +1,28 @@
-# Templateless Python
+<h1 align="center">
+  <a href="https://templateless.com/">
+    <img src="templateless.webp" alt="Templateless" width="450px">
+  </a>
+  <br />
+</h1>
+
+<p align="center">
+  <b>Ship faster by treating email as code 🚀</b> <br />
+</p>
+
+<h4 align="center">
+  <a href="https://templateless.com/">Website</a> &bull;
+  <a href="https://app.templateless.com/">Get Your API Key</a> &bull;
+  <a href="https://twitter.com/templateless">Twitter</a>
+</h4>
+
+---
 
 [![PyPI package](https://badge.fury.io/py/templateless.svg)](https://pypi.org/project/templateless/)
 [![Github Actions](https://img.shields.io/github/actions/workflow/status/templateless/templateless-python/tests.yml)](https://github.com/templateless/templateless-python/actions)
 [![Downloads](https://img.shields.io/pypi/dm/templateless)](https://pypi.org/project/templateless/)
+[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/Templateless)](https://twitter.com/templateless)
 
-## What is Templateless?
-
-[Templateless](https://templateless.com) lets you generate and send transactional emails quickly and easily so you can ship faster 🚀
+[Templateless](https://templateless.com) lets you generate and send transactional emails quickly and easily so you can focus on building your product.
 
 ## ✨ Features
 
@@ -67,7 +83,10 @@ if __name__ == "__main__":
     main()
 ```
 
-Note:
+> **Note**
+> 🚧 **This SDK is not stable yet.** The API might change as more features are added. Please pay attention to the [CHANGELOG](CHANGELOG.md) for breaking changes.
+
+Examples:
 
 1. Get your **free API key** here: <https://app.templateless.com> ✨
 1. There are more Python examples in the [examples](examples) folder

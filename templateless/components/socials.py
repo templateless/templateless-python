@@ -26,8 +26,8 @@ class Item:
         self.service = service
         self.value = value
 
-    def serialize_item(item):
-        return {"service": item.service.value, "value": item.value}
+    def to_dict(self):
+        return {"service": self.service.value, "value": self.value}
 
 
 class Socials(Component):
@@ -35,5 +35,5 @@ class Socials(Component):
         self.id = ComponentId.SOCIALS
         self.data = data
 
-    def serialize_socials(socials):
-        return {"id": socials.id.value, "data": [item for item in socials.data]}
+    def to_dict(self):
+        return {"id": self.id.value, "data": [item.to_dict() for item in self.data]}

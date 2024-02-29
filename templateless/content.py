@@ -34,7 +34,12 @@ class Content:
         return self.push(Button(text, url))
 
     def image(
-        self, src: str, url: str = "", width: int = 0, height: int = 0, alt: str = ""
+        self,
+        src: str,
+        url: str = None,
+        width: int = None,
+        height: int = None,
+        alt: str = None,
     ):
         return self.push(Image(src, alt, width, height, url))
 
@@ -50,7 +55,7 @@ class Content:
     def text(self, text: str):
         return self.push(Text(text))
 
-    def view_in_browser(self, text: str):
+    def view_in_browser(self, text: str = None):
         return self.push(ViewInBrowser(text))
 
     def push(self, component: Component):

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+**v0.1.0-alpha.2:**
+- `README.md` cleanup (listing of components)
+- `Image` component now requires only `src`; the other params are optional
+- `ViewInBrowser` component has changed: text is optional
+- New example in `examples/confirm_email.py`
+
 **v0.1.0-alpha.1:**
 - Introduced `CHANGELOG.md`
 - Introduced new services as social icons:

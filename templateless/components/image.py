@@ -2,7 +2,7 @@ from ..common import ComponentId, Component
 
 
 class Image(Component):
-    def __init__(self, src, alt, width, height, url):
+    def __init__(self, src, alt=None, width=None, height=None, url=None):
         self.id = ComponentId.IMAGE
         self.src = src
         self.alt = alt

@@ -1,7 +1,7 @@
 [project]
 name = "templateless"
 description = "Ship faster by sending elegant emails using just code"
-version = "0.1.0-alpha.2"
+version = "0.1.0-alpha.3"
 readme = "README.md"
 authors = []
 license = { file = "LICENSE" }

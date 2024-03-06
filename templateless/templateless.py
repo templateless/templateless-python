@@ -56,7 +56,14 @@ class Templateless:
         elif response.status_code == 500:
             raise UnavailableError
         elif response.status_code == 200:
-            emails_response = EmailResponse(emails=response.json().get("emails", []))
+            email_response = response.json()
+
+            for preview in email_response.get("previews", []):
+                print(
+                    f"Templateless [TEST MODE]: Emailed {preview['email']}, preview: https://tmpl.sh/{preview['preview']}"
+                )
+
+            emails_response = EmailResponse(emails=email_response.get("emails", []))
             return emails_response.emails
         else:
             raise UnknownError

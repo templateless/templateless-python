@@ -6,7 +6,7 @@ class Otp(Component):
         self.id = ComponentId.OTP
         self.text = text
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
             "id": self.id.value,
             "text": self.text,

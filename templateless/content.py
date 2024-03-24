@@ -2,7 +2,19 @@ from enum import Enum
 
 from .common import Component
 from .collection import Collection as Header, Collection as Footer
-from .components import Button, Image, Link, Otp, Socials, Text, ViewInBrowser
+from .components import (
+    Button,
+    Image,
+    Link,
+    Otp,
+    Socials,
+    Text,
+    ViewInBrowser,
+    QrCode,
+    StoreBadges,
+    Signature,
+    SignatureFont,
+)
 
 
 class Theme(Enum):
@@ -58,6 +70,18 @@ class Content:
     def view_in_browser(self, text: str = None):
         return self.push(ViewInBrowser(text))
 
+    def qr_code(self, url: str):
+        return self.push(QrCode.url(url))
+
+    def store_badges(self, data):
+        return self.push(StoreBadges(data))
+
+    def signature(self, text: str, font: SignatureFont = None):
+        return self.push(Signature(text, font))
+
+    def component(self, c):
+        return self.push(c)
+
     def push(self, component: Component):
         self.body[0].append(component)
         return self
@@ -65,7 +89,7 @@ class Content:
     def build(self):
         return self
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
             "version": self.version,
             "theme": self._theme.value,

@@ -165,8 +165,7 @@ Link component adds an anchor tag. This is the same as a text component with the
 ```python
 content = (
   Content()
-  .link("Confirm Email", "https://example.com/confirm?token=XYZ") # or...
-  .text("[Confirm Email](https://example.com/confirm?token=XYZ)")
+  .link("Confirm Email", "https://example.com/confirm?token=XYZ")
   .build()
 )
 ```
@@ -264,6 +263,8 @@ content = (
       SocialItem(Service.SNAPCHAT, "Username"),
       SocialItem(Service.THREADS, "Username"),
       SocialItem(Service.TELEGRAM, "Username"),
+      SocialItem(Service.MASTODON, "@Username@example.com"),
+      SocialItem(Service.RSS, "https://example.com/blog"),
     ]
   )
   .build()
@@ -286,6 +287,114 @@ content = (
   .build()
 )
 ```
+
+</details>
+<details><summary>Store Badges</summary>
+
+Link to your mobile apps via store badges:
+
+```python
+content = (
+  Content()
+  .store_badges(
+    [
+      StoreBadgeItem(StoreBadge.APP_STORE, "https://apps.apple.com/us/app/example/id1234567890"),
+      StoreBadgeItem(StoreBadge.GOOGLE_PLAY, "https://play.google.com/store/apps/details?id=com.example"),
+      StoreBadgeItem(StoreBadge.MICROSOFT_STORE, "https://apps.microsoft.com/detail/example"),
+    ]
+  )
+  .build()
+)
+```
+
+</details>
+<details><summary>QR Code</summary>
+
+You can also generate QR codes on the fly. They will be shown as images inside the email.
+
+Here are all the supported data types:
+
+```python
+# url
+content = (
+  Content()
+  .qr_code("https://example.com")
+  .build()
+)
+
+# email
+content = (
+  Content()
+  .component(QrCode.email("user@example.com"))
+  .build()
+)
+
+# phone
+content = (
+  Content()
+  .component(QrCode.phone("123-456-7890"))
+  .build()
+)
+
+# sms / text message
+content = (
+  Content()
+  .component(QrCode.sms("123-456-7890"))
+  .build()
+)
+
+# geo coordinates
+content = (
+  Content()
+  .component(QrCode.coordinates(37.773972, -122.431297))
+  .build()
+)
+
+# crypto address (for now only Bitcoin and Ethereum are supported)
+content = (
+  Content()
+  .component(QrCode.cryptocurrency_address(Cryptocurrency.BITCOIN, "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"))
+  .build()
+)
+
+# you can also encode any binary data
+content = (
+  Content()
+  .component(QrCode.new(bytes([1, 2, 3])))
+  .build()
+)
+```
+
+</details>
+<details><summary>Signature</summary>
+
+Generated signatures can be added to your emails to give a bit of a personal touch. This will embed an image with your custom text using one of several available fonts:
+
+```python
+# signature with a default font
+content = (
+  Content()
+  .signature("John Smith")
+  .build()
+)
+
+# signature with a custom font
+content = (
+  Content()
+  .signature("John Smith", SignatureFont.REENIE_BEANIE)
+  .build()
+)
+```
+
+These are the available fonts:
+
+- `SignatureFont.REENIE_BEANIE` [preview →](https://fonts.google.com/specimen/Reenie+Beanie)
+- `SignatureFont.MEOW_SCRIPT` [preview →](https://fonts.google.com/specimen/Meow+Script)
+- `SignatureFont.CAVEAT` [preview →](https://fonts.google.com/specimen/Caveat)
+- `SignatureFont.ZEYADA` [preview →](https://fonts.google.com/specimen/Zeyada)
+- `SignatureFont.PETEMOSS` [preview →](https://fonts.google.com/specimen/Petemoss)
+
+Signature should not exceed 64 characters. Only alphanumeric characters and most common symbols are allowed.
 
 </details>
 

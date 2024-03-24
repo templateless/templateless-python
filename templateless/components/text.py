@@ -6,7 +6,7 @@ class Text(Component):
         self.id = ComponentId.TEXT
         self.text = text
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
             "id": self.id.value,
             "text": self.text,

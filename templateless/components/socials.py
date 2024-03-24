@@ -19,6 +19,8 @@ class Service(Enum):
     SNAPCHAT = "SNAPCHAT"
     THREADS = "THREADS"
     TELEGRAM = "TELEGRAM"
+    MASTODON = "MASTODON"
+    RSS = "RSS"
 
 
 class Item:
@@ -26,8 +28,8 @@ class Item:
         self.service = service
         self.value = value
 
-    def to_dict(self):
-        return {"service": self.service.value, "value": self.value}
+    def to_dict(self) -> dict:
+        return {"key": self.service.value, "value": self.value}
 
 
 class Socials(Component):
@@ -35,5 +37,5 @@ class Socials(Component):
         self.id = ComponentId.SOCIALS
         self.data = data
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {"id": self.id.value, "data": [item.to_dict() for item in self.data]}

@@ -1,5 +1,5 @@
 from .templateless import Templateless  # noqa
-from .content import Content  # noqa
+from .content import Content, Theme  # noqa
 from .collection import Collection as Header  # noqa
 from .collection import Collection as Footer  # noqa
 from .common import ComponentId  # noqa

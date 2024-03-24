@@ -17,20 +17,16 @@ def main():
         print("Set TEMPLATELESS_EMAIL_ADDRESS to your own email address")
         sys.exit(1)
 
-    content = Content().text("Hello world").build()
-
     email = (
         Email()
         .to(EmailAddress(email_address))
-        .subject("Hello")
-        .content(content)
+        .subject("Hello 👋")
+        .content(Content().text("Hello world").build())
         .build()
     )
 
     templateless = Templateless(api_key)
-    result = templateless.send(email)
-
-    print(result)
+    templateless.send(email)
 
 
 if __name__ == "__main__":

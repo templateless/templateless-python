@@ -10,6 +10,9 @@ class ComponentId(Enum):
     SOCIALS = "SOCIALS"
     TEXT = "TEXT"
     VIEW_IN_BROWSER = "VIEW_IN_BROWSER"
+    QR_CODE = "QR_CODE"
+    SIGNATURE = "SIGNATURE"
+    STORE_BADGES = "STORE_BADGES"
 
 
 class Component:

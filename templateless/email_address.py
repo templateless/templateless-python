@@ -3,5 +3,5 @@ class EmailAddress:
         self.email = email
         self.name = name
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {"email": self.email, "name": self.name}

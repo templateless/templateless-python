@@ -1,4 +1,16 @@
-from .components import Button, Image, Link, Otp, Socials, Text, ViewInBrowser
+from .components import (
+    Button,
+    Image,
+    Link,
+    Otp,
+    Socials,
+    Text,
+    ViewInBrowser,
+    QrCode,
+    StoreBadges,
+    Signature,
+    SignatureFont,
+)
 
 
 class Collection:
@@ -38,6 +50,22 @@ class Collection:
 
     def view_in_browser(self, text: str = None):
         self.components.append(ViewInBrowser(text))
+        return self
+
+    def qr_code(self, url: str):
+        self.components.append(QrCode.url(url))
+        return self
+
+    def store_badges(self, data):
+        self.components.append(StoreBadges(data))
+        return self
+
+    def signature(self, text: str, font: SignatureFont = None):
+        self.components.append(Signature(text, font))
+        return self
+
+    def component(self, c):
+        self.components.append(c)
         return self
 
     def build(self):

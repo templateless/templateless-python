@@ -7,5 +7,5 @@ class Button(Component):
         self.text = text
         self.url = url
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {"id": self.id.value, "text": self.text, "url": self.url}

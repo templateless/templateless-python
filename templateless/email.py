@@ -36,7 +36,7 @@ class Email:
     def build(self):
         return self
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
             "to": [to.to_dict() for to in self._to],
             "subject": self._subject,

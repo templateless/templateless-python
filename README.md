@@ -86,9 +86,7 @@ def main():
     )
 
     templateless = Templateless("<YOUR_API_KEY>")
-    result = templateless.send(email)
-
-    print(result)
+    templateless.send(email)
 
 
 if __name__ == "__main__":
